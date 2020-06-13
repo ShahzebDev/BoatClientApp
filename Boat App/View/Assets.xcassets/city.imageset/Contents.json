@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "Honda-City-Left-Side-View-102404.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Honda-City-Left-Side-View-102403.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
