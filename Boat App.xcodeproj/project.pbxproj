@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		01B59DA4FC359F6E7207653B /* Pods_Boat_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8586D2950167AD6AC97A6F75 /* Pods_Boat_App.framework */; };
+		03612AE3249AAF4700AE6F41 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03612AE2249AAF4700AE6F41 /* HomeViewController.swift */; };
+		03612AE5249AB22300AE6F41 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03612AE4249AB22300AE6F41 /* ProfileViewController.swift */; };
 		038DCBED2483FB7B00353FA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038DCBEC2483FB7B00353FA8 /* AppDelegate.swift */; };
 		038DCBEF2483FB7B00353FA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038DCBEE2483FB7B00353FA8 /* SceneDelegate.swift */; };
 		038DCBF12483FB7B00353FA8 /* OnBoardingViewControlleer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038DCBF02483FB7B00353FA8 /* OnBoardingViewControlleer.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03612AE2249AAF4700AE6F41 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		03612AE4249AB22300AE6F41 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		038DCBE92483FB7B00353FA8 /* Boat App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boat App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		038DCBEC2483FB7B00353FA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		038DCBEE2483FB7B00353FA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03612AE1249AAF3600AE6F41 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				03612AE2249AAF4700AE6F41 /* HomeViewController.swift */,
+				03612AE4249AB22300AE6F41 /* ProfileViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		038DCBE02483FB7B00353FA8 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				038DCBF02483FB7B00353FA8 /* OnBoardingViewControlleer.swift */,
+				03612AE1249AAF3600AE6F41 /* Home */,
 				FC7D69C024914E23007775F6 /* OTP */,
 				038DCC092484027A00353FA8 /* SignUp */,
 				038DCC062484022D00353FA8 /* Login */,
@@ -317,8 +331,10 @@
 				FC7D69BF24914E17007775F6 /* OTPViewController.swift in Sources */,
 				038DCC082484027600353FA8 /* LoginViewController.swift in Sources */,
 				038DCBF12483FB7B00353FA8 /* OnBoardingViewControlleer.swift in Sources */,
+				03612AE3249AAF4700AE6F41 /* HomeViewController.swift in Sources */,
 				038DCBED2483FB7B00353FA8 /* AppDelegate.swift in Sources */,
 				038DCBEF2483FB7B00353FA8 /* SceneDelegate.swift in Sources */,
+				03612AE5249AB22300AE6F41 /* ProfileViewController.swift in Sources */,
 				FC7D69C2249154AB007775F6 /* Custom Button.swift in Sources */,
 				038DCC0B2484028E00353FA8 /* SignUpViewController.swift in Sources */,
 			);
