@@ -470,6 +470,86 @@
             </objects>
             <point key="canvasLocation" x="2386.9565217391305" y="137.94642857142856"/>
         </scene>
+        <!--Mobile Number View Controller-->
+        <scene sceneID="TLF-42-M5F">
+            <objects>
+                <viewController storyboardIdentifier="mobile" id="0L8-Gy-Cth" customClass="MobileNumberViewController" customModule="Boat_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2f5-mf-JHm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U87-O8-9Aj">
+                                <rect key="frame" x="20" y="114" width="287" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="287" id="cG8-dR-zmS"/>
+                                    <constraint firstAttribute="height" constant="29" id="p62-Aj-800"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boat servers will OTP to your given mobile number." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="L1b-2f-QqG">
+                                <rect key="frame" x="20" y="151" width="698" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="nK9-Tj-Zuk"/>
+                                    <constraint firstAttribute="width" constant="698" id="wZG-fG-c6U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Formate: +92xxxxxxxxxxx" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvN-hp-dZy">
+                                <rect key="frame" x="20" y="214" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="mrR-0A-FB3"/>
+                                    <constraint firstAttribute="height" constant="34" id="oH3-hg-Liu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bb-yv-g8Q" customClass="RoundButton" customModule="Boat_App" customModuleProvider="target">
+                                <rect key="frame" x="122" y="266" width="157" height="43"/>
+                                <color key="backgroundColor" red="0.1279394925" green="0.5237619281" blue="0.40783214569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="Jqk-Lf-3DP"/>
+                                    <constraint firstAttribute="height" constant="43" id="b1z-oj-AM5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Verify my number">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="verifyMyNumber:" destination="0L8-Gy-Cth" eventType="touchUpInside" id="mg5-vK-Kwc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1586623788" green="0.3908680081" blue="0.56473034619999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="U87-O8-9Aj" firstAttribute="top" secondItem="Ido-hH-WAQ" secondAttribute="top" constant="70" id="CvW-45-U9C"/>
+                            <constraint firstItem="Ido-hH-WAQ" firstAttribute="trailing" secondItem="1Bb-yv-g8Q" secondAttribute="trailing" constant="135" id="NhW-ej-ANq"/>
+                            <constraint firstItem="1Bb-yv-g8Q" firstAttribute="leading" secondItem="Ido-hH-WAQ" secondAttribute="leading" constant="122" id="bgU-of-S0m"/>
+                            <constraint firstItem="L1b-2f-QqG" firstAttribute="top" secondItem="U87-O8-9Aj" secondAttribute="bottom" constant="8" id="fH0-0G-Brs"/>
+                            <constraint firstItem="L1b-2f-QqG" firstAttribute="leading" secondItem="U87-O8-9Aj" secondAttribute="leading" id="fiT-gA-KPo"/>
+                            <constraint firstItem="bvN-hp-dZy" firstAttribute="leading" secondItem="Ido-hH-WAQ" secondAttribute="leading" constant="20" id="gtW-0X-cDz"/>
+                            <constraint firstItem="1Bb-yv-g8Q" firstAttribute="top" secondItem="bvN-hp-dZy" secondAttribute="bottom" constant="18" id="k51-Ai-S71"/>
+                            <constraint firstItem="bvN-hp-dZy" firstAttribute="top" secondItem="L1b-2f-QqG" secondAttribute="bottom" constant="21" id="v1c-wN-gx2"/>
+                            <constraint firstItem="U87-O8-9Aj" firstAttribute="leading" secondItem="Ido-hH-WAQ" secondAttribute="leading" constant="20" id="vMB-Y3-fv7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ido-hH-WAQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="mobileNumber" destination="bvN-hp-dZy" id="Ioh-We-4t3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dat-Gj-N18" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3237.68115942029" y="137.94642857142856"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="E9n-S1-naZ">
             <objects>

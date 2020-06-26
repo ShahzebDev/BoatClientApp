@@ -9,9 +9,9 @@
 import UIKit
 import Firebase
 import GoogleSignIn
-import FacebookLogin
-import FacebookCore
-import FacebookShare
+import FBSDKLoginKit
+import FBSDKCoreKit
+import FBSDKShareKit
 class LoginViewController: UIViewController {
 
     @IBOutlet var phoneNumberTextField: UITextField!
@@ -120,5 +120,11 @@ extension LoginViewController:LoginButtonDelegate{
                 
             }
         })
+        
+        let story = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc = story.instantiateViewController(identifier: "mobile")
+        self.present(vc, animated: true) {
+            print("Mobile requried screen is showing")
+        }
     }
 }

@@ -1,4 +1,4 @@
-framework module Pods_Boat_App {
+module Pods_Boat_App {
   umbrella header "Pods-Boat App-umbrella.h"
 
   export *
