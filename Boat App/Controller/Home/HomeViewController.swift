@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 class HomeViewController: UIViewController {
 
     
@@ -20,13 +22,8 @@ class HomeViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var profileImageView: UIImageView!
-    @IBOutlet var mapView: UIView!
-    @IBOutlet var mapLocationLabel: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     func initializUI() {
@@ -90,4 +87,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func didTapCurrentLocationButton(_ sender: Any) {
     }
+    
 }
+
+
