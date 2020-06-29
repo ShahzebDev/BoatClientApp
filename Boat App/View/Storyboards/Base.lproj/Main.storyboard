@@ -488,7 +488,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boat servers will OTP to your given mobile number." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="L1b-2f-QqG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will send OTP to your given mobile number." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="L1b-2f-QqG">
                                 <rect key="frame" x="20" y="151" width="698" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="nK9-Tj-Zuk"/>
@@ -1048,6 +1048,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWY-LW-jzd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3834.7826086956525" y="1060.7142857142858"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="O1N-aZ-rF0">
+            <objects>
+                <viewController id="ms2-2N-LrD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r8o-id-cUa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="82K-C0-QhU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Xn-pq-a5x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4770" y="1056"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZJH-jd-eE3">

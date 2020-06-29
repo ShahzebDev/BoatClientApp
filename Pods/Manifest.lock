@@ -34,6 +34,9 @@ PODS:
   - Firebase/Messaging (6.23.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 4.3.1)
+  - Firebase/Storage (6.23.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 3.6.1)
   - FirebaseAnalytics (6.4.2):
     - FirebaseCore (~> 6.6)
     - FirebaseInstallations (~> 1.2)
@@ -86,6 +89,10 @@ PODS:
     - GoogleUtilities/Reachability (~> 6.5)
     - GoogleUtilities/UserDefaults (~> 6.5)
     - Protobuf (>= 3.9.2, ~> 3.9)
+  - FirebaseStorage (3.6.1):
+    - FirebaseAuthInterop (~> 1.1)
+    - FirebaseCore (~> 6.6)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleAppMeasurement (6.4.2):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -96,13 +103,6 @@ PODS:
   - GoogleDataTransportCCTSupport (3.0.0):
     - GoogleDataTransport (~> 6.0)
     - nanopb (~> 0.3.901)
-  - GoogleMaps (3.9.0):
-    - GoogleMaps/Maps (= 3.9.0)
-  - GoogleMaps/Base (3.9.0)
-  - GoogleMaps/Maps (3.9.0):
-    - GoogleMaps/Base
-  - GooglePlaces (3.9.0):
-    - GoogleMaps/Base (= 3.9.0)
   - GoogleSignIn (5.0.2):
     - AppAuth (~> 1.2)
     - GTMAppAuth (~> 1.0)
@@ -151,14 +151,10 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Messaging
-  - GoogleMaps
-  - GooglePlaces
+  - Firebase/Storage
   - GoogleSignIn
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - GoogleMaps
-    - GooglePlaces
   trunk:
     - AppAuth
     - FBSDKCoreKit
@@ -176,6 +172,7 @@ SPEC REPOS:
     - FirebaseInstallations
     - FirebaseInstanceID
     - FirebaseMessaging
+    - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -205,11 +202,10 @@ SPEC CHECKSUMS:
   FirebaseInstallations: 2119fb3e46b0a88bfdbf12562f855ee3252462fa
   FirebaseInstanceID: cef67c4967c7cecb56ea65d8acbb4834825c587b
   FirebaseMessaging: 828e66eb357a893e3cebd9ee0f6bc1941447cc94
+  FirebaseStorage: f4f39ae834a7145963b913f54e2f24a9db1d8fac
   GoogleAppMeasurement: 2253e99c1f22638cf234c059144660c338ad76c3
   GoogleDataTransport: 061fe7d9b476710e3cd8ea51e8e07d8b67c2b420
   GoogleDataTransportCCTSupport: 0f39025e8cf51f168711bd3fb773938d7e62ddb5
-  GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
-  GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
@@ -219,6 +215,6 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
 
-PODFILE CHECKSUM: d13177e424009721351e6716bb42ac993dc9231c
+PODFILE CHECKSUM: 94c69a728f496bba934b385065bbc1910b2ee4fc
 
 COCOAPODS: 1.9.1

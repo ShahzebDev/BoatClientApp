@@ -18,6 +18,7 @@ class MainScreenViewController: UIViewController {
     let locationManager = CLLocationManager()
     let reigionInMeters: Double = 500
     var previousLocation: CLLocation?
+    var directionArray:[MKDirections] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,57 @@ class MainScreenViewController: UIViewController {
     func settingUpLocationLabelView(){
         locationLabelView.alpha = 0.8
         locationLabelView.backgroundColor = UIColor.lightGray
+    }
+    
+    
+    func getDirection(){
+        guard let location = locationManager.location?.coordinate else {return}
+        
+        
+        let request = createDirectionRequest(frm: location)
+        let directions = MKDirections(request: request)
+        resetMapView(withNew: directions)
+        
+        directions.calculate { [unowned self](response, error) in
+            if let err = error{
+                print("Error: \(error?.localizedDescription)")
+                return
+            }
+            guard let response = response else {return}
+            for routes in response.routes{
+                self.mapView.addOverlay(routes.polyline)
+                self.mapView.setVisibleMapRect(routes.polyline.boundingMapRect, animated: true)
+            }
+        }
+    }
+    
+    
+    func createDirectionRequest(frm coordinate: CLLocationCoordinate2D)->MKDirections.Request{
+        let destinationCoordinates = getCenterLocation(for: mapView).coordinate
+        let startingLocation = MKPlacemark(coordinate: coordinate)
+        let destination = MKPlacemark(coordinate: destinationCoordinates)
+        
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: startingLocation)
+        request.destination = MKMapItem(placemark: destination)
+        request.transportType = .automobile
+        request.requestsAlternateRoutes = true
+        
+        return request
+    }
+    
+    func resetMapView(withNew directions: MKDirections){
+        mapView.removeOverlays(mapView.overlays)
+        directionArray.append(directions)
+        let _ = directionArray.map {$0.cancel()}
+        
+    }
+    
+    
+    
+//Just to add direction button on maain sccreen and connect that button to this method.
+    @IBAction func GoButtonTapped(_ sender: UIButton){
+        getDirection()
     }
     
     
@@ -118,6 +170,9 @@ extension MainScreenViewController: MKMapViewDelegate{
         
         guard center.distance(from: previousLocation) > 50 else {return}
         self.previousLocation = center
+        
+        
+        geoCoder.cancelGeocode()
         geoCoder.reverseGeocodeLocation(center){ [weak self] (placemarks,error) in
             guard let self = self else {return}
             if let _ = error {
@@ -137,5 +192,12 @@ extension MainScreenViewController: MKMapViewDelegate{
                 print("\(streatName) \(streatNumber)")
             }
         }
+    }
+    
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let render = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        render.strokeColor = .blue
+        return render
     }
 }

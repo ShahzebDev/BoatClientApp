@@ -7,12 +7,12 @@ target 'Boat App' do
 
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
-  pod 'GoogleSignIn'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage' 
   pod 'Firebase/Messaging'
+  pod 'GoogleSignIn'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
-  pod 'GoogleMaps'
-  pod 'GooglePlaces'
+  
 end
