@@ -52,6 +52,10 @@ class SignUpViewController: UIViewController {
                 
             }
             print("Sucessfully create new user to our database.")
+            UserDefaults.standard.set(email, forKey: "user_email")
+            UserDefaults.standard.set(name, forKey: "user_name")
+            UserDefaults.standard.set(phone, forKey: "user_phone")
+            UserDefaults.standard.set(pass, forKey: "user_pass")
         }
         
         PhoneAuthProvider.provider().verifyPhoneNumber(phone, uiDelegate: nil) { (verificationID, error) in
@@ -61,9 +65,10 @@ class SignUpViewController: UIViewController {
             }
 
             UserDefaults.standard.set(verificationID, forKey: "verificationID")
-            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "OTPScreen") else {return}
+            let story = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+            let vc = story.instantiateViewController(withIdentifier: "verification") 
             self.present(vc, animated: true) {
-                print("OTP Screen is showing")
+                print("verification Screen is showing")
             }
         }
         

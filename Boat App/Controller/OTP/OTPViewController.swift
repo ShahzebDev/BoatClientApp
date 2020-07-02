@@ -17,6 +17,7 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var textField3: UITextField!
     @IBOutlet var textField2: UITextField!
     @IBOutlet var verifyButton: RoundButton!
+    var window: UIWindow!
     
     var otpValue = [String]()
     
@@ -144,7 +145,7 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
             return
         }
         self.customAlert(status: "You're Verified")
-        
+        //UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = vc
     }
 }
     
@@ -154,6 +155,10 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
         self.present(ac, animated: true) {
             print("OTP Status Alert is showing")
         }
+        
+        let story = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let vc = story.instantiateViewController(identifier: "home") as! MainScreenViewController
+       UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = vc
     }
     
    

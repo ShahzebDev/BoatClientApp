@@ -35,8 +35,10 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func didTapLoginButton(_ sender: Any) {
-        
+        guard let phoneNo = phoneNumberTextField.text else {return}
+        guard let pass = passwordTextField.text else {return}
     }
+    
     
     @IBAction func didTapFacebookLogin(_ sender: Any) {
         LoginManager().logIn(permissions: ["public_profile","email"], from: self) { (result, error) in
@@ -76,6 +78,13 @@ extension LoginViewController: GIDSignInDelegate{
         let username = user.profile.name
         
         print("User Information: \("Email: \(email)\n Username: \(username)")")
+        UserDefaults.standard.set(username, forKey: "user_name")
+        let story = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc = story.instantiateViewController(identifier: "verification")
+        self.present(vc, animated: true) {
+            print("Mobile requried screen is showing")
+        }
+        //Now we can save our user data to boat server database.
     }
 }
 
@@ -117,12 +126,16 @@ extension LoginViewController:LoginButtonDelegate{
                 print(dp as Any)
                 print(email as Any)
                 print("http://graph.facebook.com/\(fbid!)/picture?type=large")
+                UserDefaults.standard.set(username, forKey: "user_name")
+                
+                
+                //Now we can save our data to boat server Database
                 
             }
         })
         
         let story = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let vc = story.instantiateViewController(identifier: "mobile")
+        let vc = story.instantiateViewController(identifier: "verification")
         self.present(vc, animated: true) {
             print("Mobile requried screen is showing")
         }

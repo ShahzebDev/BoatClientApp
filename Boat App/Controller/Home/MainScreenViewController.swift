@@ -15,6 +15,9 @@ class MainScreenViewController: UIViewController {
    
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var locationLabelView: UIView!
+    
+    @IBOutlet var requestNow: UIButton!
+    
     let locationManager = CLLocationManager()
     let reigionInMeters: Double = 500
     var previousLocation: CLLocation?
@@ -25,6 +28,188 @@ class MainScreenViewController: UIViewController {
          checkLoctionServices()
          settingUpLocationLabelView()
     
+    }
+    
+
+    
+    
+    
+    //Initialling we cannot show this UIView on our user map screen
+    //we will show this view when we want to show boat driver details.
+    func creatingIncomingBottomView(){
+        let bottomView = UIView()
+        bottomView.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        mapView.addSubview(bottomView)
+        bottomView.translatesAutoresizingMaskIntoConstraints = false
+        bottomView.clipsToBounds = true
+        bottomView.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 670).isActive = true
+        bottomView.widthAnchor.constraint(equalToConstant: 415).isActive = true
+        bottomView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        bottomView.centerXAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
+        
+        
+        
+        
+        
+        let incomingIcone = UIImageView()
+        // We will extract image of our driver and show it here
+        incomingIcone.image = #imageLiteral(resourceName: "man-2")
+        incomingIcone.layer.cornerRadius = 40
+        incomingIcone.layer.borderWidth = 1
+        incomingIcone.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        bottomView.addSubview(incomingIcone)
+        
+        
+        incomingIcone.translatesAutoresizingMaskIntoConstraints = false
+        incomingIcone.clipsToBounds = true
+        
+        incomingIcone.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 20).isActive = true
+        incomingIcone.leftAnchor.constraint(equalTo: bottomView.leftAnchor, constant: 30).isActive = true
+        incomingIcone.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        incomingIcone.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        
+        
+        let incominglable = UILabel()
+        // We will extract name of our driver and show it here
+        incominglable.text = " Driver Name"
+        incominglable.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        incominglable.font = UIFont.boldSystemFont(ofSize: 20)
+        bottomView.addSubview(incominglable)
+           
+           
+        incominglable.translatesAutoresizingMaskIntoConstraints = false
+        incominglable.clipsToBounds = true
+           
+        incominglable.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 30).isActive = true
+        incominglable.leftAnchor.constraint(equalTo: bottomView.leftAnchor, constant: 150).isActive = true
+        incominglable.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        incominglable.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        
+        
+        let incomingAdress = UILabel()
+        // We will extract location of our driver and show it here
+         incomingAdress.text = "Driver Location"
+         incomingAdress.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+         incomingAdress.font = UIFont.boldSystemFont(ofSize: 15)
+         bottomView.addSubview(incomingAdress)
+        
+        
+         incomingAdress.translatesAutoresizingMaskIntoConstraints = false
+         incomingAdress.clipsToBounds = true
+        
+         incomingAdress.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 60).isActive = true
+         incomingAdress.leftAnchor.constraint(equalTo: bottomView.leftAnchor, constant: 150).isActive = true
+         incomingAdress.widthAnchor.constraint(equalToConstant: 150).isActive = true
+         incomingAdress.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        
+        
+        
+        let bottomView2 = UIView()
+        bottomView2.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        mapView.addSubview(bottomView2)
+           
+           
+           
+        bottomView2.translatesAutoresizingMaskIntoConstraints = false
+        bottomView2.clipsToBounds = true
+           
+        bottomView2.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 800).isActive = true
+           
+        bottomView2.widthAnchor.constraint(equalToConstant: 415).isActive = true
+           bottomView2.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        bottomView2.centerXAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
+        
+        
+        let acceptButton = UIButton()
+              acceptButton.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+                 
+              bottomView2.addSubview(acceptButton)
+              acceptButton.addTarget(self, action: #selector(self.requestAction), for: .touchUpInside)
+              acceptButton.tag = 1
+          
+              acceptButton.translatesAutoresizingMaskIntoConstraints = false
+              acceptButton.clipsToBounds = true
+          
+              acceptButton.topAnchor.constraint(equalTo: bottomView2.topAnchor, constant: 20).isActive = true
+              acceptButton.leftAnchor.constraint(equalTo: bottomView2.leftAnchor, constant: 330).isActive = true
+              acceptButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+              acceptButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+          
+          
+          
+          let declineButton = UIButton()
+              declineButton.setImage(#imageLiteral(resourceName: "error"), for: .normal)
+              declineButton.addTarget(self, action: #selector(self.requestAction), for: .touchUpInside)
+              declineButton.tag = 2
+              bottomView2.addSubview(declineButton)
+          
+              declineButton.translatesAutoresizingMaskIntoConstraints = false
+              declineButton.clipsToBounds = true
+          
+              declineButton.topAnchor.constraint(equalTo: bottomView2.topAnchor, constant: 20).isActive = true
+              declineButton.leftAnchor.constraint(equalTo: bottomView2.leftAnchor, constant: 230).isActive = true
+              declineButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+              declineButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+          
+        
+          
+          
+          let messageButton = UIButton()
+              messageButton.setImage(#imageLiteral(resourceName: "email"), for: .normal)
+              messageButton.addTarget(self, action: #selector(self.requestAction), for: .touchUpInside)
+              messageButton.tag = 3
+              bottomView2.addSubview(messageButton)
+          
+              messageButton.translatesAutoresizingMaskIntoConstraints = false
+              messageButton.clipsToBounds = true
+          
+              messageButton.topAnchor.constraint(equalTo: bottomView2.topAnchor, constant: 20).isActive = true
+              messageButton.leftAnchor.constraint(equalTo: bottomView2.leftAnchor, constant: 130).isActive = true
+              messageButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+              messageButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+          
+          
+          
+          let callButton = UIButton()
+              callButton.setImage(#imageLiteral(resourceName: "telephone"), for: .normal)
+              callButton.addTarget(self, action: #selector(self.requestAction), for: .touchUpInside)
+              callButton.tag = 4
+              bottomView2.addSubview(callButton)
+                 
+              callButton.translatesAutoresizingMaskIntoConstraints = false
+              callButton.clipsToBounds = true
+                 
+              callButton.topAnchor.constraint(equalTo: bottomView2.topAnchor, constant: 20).isActive = true
+              callButton.leftAnchor.constraint(equalTo: bottomView2.leftAnchor, constant: 30).isActive = true
+              callButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+              callButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+
+    }
+    @objc func requestAction(sender:UIButton){
+               if (sender.tag == 1){
+                 print("accept button is called")
+               }else if(sender.tag == 2){
+               print("request decline button is called")
+               }else if (sender.tag == 3){
+                print("Chat button is called")
+               }else if (sender.tag == 4){
+               print("make a phone call")
+           }
+       }
+    
+    
+    @IBAction func requestNowBtnPressed(){
+        print("Request Now!!!")
+        requestNow.isHidden = true
+        getDirection()
+        
+        
+        // after implementation of request now functionality based on logic we should display this our own created bottom view to show the details of driver to the user.
+        creatingIncomingBottomView()
+        
     }
     
     
@@ -44,13 +229,14 @@ class MainScreenViewController: UIViewController {
         
         directions.calculate { [unowned self](response, error) in
             if let err = error{
-                print("Error: \(error?.localizedDescription)")
+                print("Error: \(err.localizedDescription)")
                 return
             }
             guard let response = response else {return}
             for routes in response.routes{
                 self.mapView.addOverlay(routes.polyline)
                 self.mapView.setVisibleMapRect(routes.polyline.boundingMapRect, animated: true)
+               
             }
         }
     }
@@ -187,11 +373,14 @@ extension MainScreenViewController: MKMapViewDelegate{
             let streatName = placemark.thoroughfare ?? ""
             let countryName = placemark.country ?? ""
             
+            
             DispatchQueue.main.async {
                 self.locationLabel.text = "\(streatName) \(streatNumber), \(countryName) "
                 print("\(streatName) \(streatNumber)")
             }
+            
         }
+        
     }
     
     

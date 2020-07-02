@@ -37,7 +37,8 @@ class MobileNumberViewController: UIViewController {
             }
             
             UserDefaults.standard.set(verificationID, forKey: "verificationID")
-            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "OTPScreen") else {return}
+            let story = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+            let vc = story.instantiateViewController(identifier: "OTPScreen") as! OTPViewController
             self.present(vc, animated: true) {
                 print("OTP Screen is showing")
             }

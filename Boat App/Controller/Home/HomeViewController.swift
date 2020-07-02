@@ -53,7 +53,12 @@ class HomeViewController: UIViewController {
 
     @objc
     func openSettingView() {
-        
+       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+       let vc = storyboard.instantiateViewController(identifier: "setting") as SettingViewController
+        present(vc, animated: true) {
+            print("Setting view controller is showing.")
+        }
+       
     }
     
     @objc
