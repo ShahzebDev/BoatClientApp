@@ -17,6 +17,7 @@ class VerificationViewController: UIViewController {
         imageNameField.backgroundColor = UIColor.clear
 
         // Do any additional setup after loading the view.
+        border(textField: imageNameField)
     }
     
     
