@@ -16,7 +16,6 @@ class VerificationViewController: UIViewController {
         super.viewDidLoad()
         imageNameField.backgroundColor = UIColor.clear
 
-        // Do any additional setup after loading the view.
         border(textField: imageNameField)
     }
     
@@ -26,6 +25,8 @@ class VerificationViewController: UIViewController {
     }
     
     @IBAction func continuebutton(_ sender: UIButton){
+        //MARK:- Moving to Mobile Required Screen.
+        
         let story = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let vc = story.instantiateViewController(identifier: "mobile")
         self.present(vc, animated: true, completion: nil)
@@ -55,11 +56,11 @@ extension VerificationViewController: UIImagePickerControllerDelegate,UINavigati
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+        if let _ = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             self.imageNameField.text = "image.jpg"
             //here we perform our backend that will send this photo our database
             
-        }else if let imageOrignal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+        }else if let _ = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             self.imageNameField.text = "image.jpg"
             //here we perform our backend that will send this photo our database
         }

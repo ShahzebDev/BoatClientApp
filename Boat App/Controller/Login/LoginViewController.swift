@@ -29,14 +29,12 @@ class LoginViewController: UIViewController {
             }else{
                 print("User is not sucessfully LoggedIn")
         }
-
-        // Do any additional setup after loading the view.
     }
     
 
     @IBAction func didTapLoginButton(_ sender: Any) {
-        guard let phoneNo = phoneNumberTextField.text else {return}
-        guard let pass = passwordTextField.text else {return}
+        guard let _ = phoneNumberTextField.text else {return}
+        guard let _ = passwordTextField.text else {return}
     }
     
     
@@ -57,38 +55,44 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didTapTwitterLogin(_ sender: Any) {
+        //TODO:-
     }
     
     @IBAction func didTapForgotPassward(_ sender: Any) {
+        //TODO:-
     }
-    
-    
-    
-    
     
 }
 
 extension LoginViewController: GIDSignInDelegate{
+    
+    //MARK:- Getting Google user information.
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error =  error{
             print("Error: \(error.localizedDescription)")
             return
         }
-        let email = user.profile.email
-        let username = user.profile.name
+        let email = user.profile.email ?? ""
+        let username = user.profile.name ?? ""
         
         print("User Information: \("Email: \(email)\n Username: \(username)")")
         UserDefaults.standard.set(username, forKey: "user_name")
+        //Here we can save our user data to boat server database.
+        
         let story = UIStoryboard(name: "Main", bundle: Bundle.main)
         let vc = story.instantiateViewController(identifier: "verification")
         self.present(vc, animated: true) {
             print("Mobile requried screen is showing")
         }
-        //Now we can save our user data to boat server database.
+        
     }
 }
 
 extension LoginViewController:LoginButtonDelegate{
+    
+    //MARK:- Getting Facebook user information.
+    
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
          fetchUserProfile()
     }
@@ -129,10 +133,13 @@ extension LoginViewController:LoginButtonDelegate{
                 UserDefaults.standard.set(username, forKey: "user_name")
                 
                 
-                //Now we can save our data to boat server Database
+                //Here we can save our data to boat server Database
                 
             }
         })
+        
+        
+        //MARK:-  Moving to Verification Screen.
         
         let story = UIStoryboard(name: "Main", bundle: Bundle.main)
         let vc = story.instantiateViewController(identifier: "verification")

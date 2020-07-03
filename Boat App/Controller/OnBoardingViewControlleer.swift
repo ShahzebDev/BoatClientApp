@@ -29,5 +29,6 @@ class ViewController: UIViewController {
     
     @IBAction func openTermsConditions(_ sender: Any) {
     }
-}
+}  
+
 

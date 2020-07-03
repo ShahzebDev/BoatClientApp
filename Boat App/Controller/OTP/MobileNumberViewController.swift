@@ -27,6 +27,7 @@ class MobileNumberViewController: UIViewController {
     }
     
     
+    //MARK:- Authenticate User Provide Mobile Number.
     
     @IBAction func verifyMyNumber(_ sender: Any) {
         guard let mobileNumber = mobileNumber.text else {return}
@@ -37,6 +38,8 @@ class MobileNumberViewController: UIViewController {
             }
             
             UserDefaults.standard.set(verificationID, forKey: "verificationID")
+            
+            //MARK:- Moving to OTP Screen.
             let story = UIStoryboard.init(name: "Main", bundle: Bundle.main)
             let vc = story.instantiateViewController(identifier: "OTPScreen") as! OTPViewController
             self.present(vc, animated: true) {
@@ -45,15 +48,4 @@ class MobileNumberViewController: UIViewController {
         }
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

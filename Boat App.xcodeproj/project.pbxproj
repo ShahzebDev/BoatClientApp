@@ -21,6 +21,7 @@
 		FC1AB5EC24AD1A0A008D8C98 /* chatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1AB5EB24AD1A0A008D8C98 /* chatLogController.swift */; };
 		FC1AB5EE24AD1EB2008D8C98 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1AB5ED24AD1EB2008D8C98 /* SettingViewController.swift */; };
 		FC1AB5F024AD51B0008D8C98 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1AB5EF24AD51B0008D8C98 /* VerificationViewController.swift */; };
+		FC1AB5F424AE5398008D8C98 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1AB5F324AE5398008D8C98 /* WalkthroughViewController.swift */; };
 		FC1CDA2D24A697FE005AF7D1 /* MobileNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1CDA2C24A697FE005AF7D1 /* MobileNumberViewController.swift */; };
 		FC1CDA2F24A93395005AF7D1 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1CDA2E24A93395005AF7D1 /* MainScreenViewController.swift */; };
 		FC66735A2486C344000C38E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC6673592486C344000C38E4 /* GoogleService-Info.plist */; };
@@ -46,6 +47,7 @@
 		FC1AB5EB24AD1A0A008D8C98 /* chatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatLogController.swift; sourceTree = "<group>"; };
 		FC1AB5ED24AD1EB2008D8C98 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FC1AB5EF24AD51B0008D8C98 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
+		FC1AB5F324AE5398008D8C98 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		FC1CDA2C24A697FE005AF7D1 /* MobileNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileNumberViewController.swift; sourceTree = "<group>"; };
 		FC1CDA2E24A93395005AF7D1 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		FC6673592486C344000C38E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -80,7 +82,6 @@
 		038DCBE02483FB7B00353FA8 = {
 			isa = PBXGroup;
 			children = (
-				FC1AB5EF24AD51B0008D8C98 /* VerificationViewController.swift */,
 				038DCBEB2483FB7B00353FA8 /* Boat App */,
 				038DCBEA2483FB7B00353FA8 /* Products */,
 				2A7F75BC72D84AED357AC3A4 /* Pods */,
@@ -115,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				038DCBF02483FB7B00353FA8 /* OnBoardingViewControlleer.swift */,
+				FC1AB5F324AE5398008D8C98 /* WalkthroughViewController.swift */,
 				FC1AB5EB24AD1A0A008D8C98 /* chatLogController.swift */,
 				03612AE1249AAF3600AE6F41 /* Home */,
 				FC7D69C024914E23007775F6 /* OTP */,
@@ -203,6 +205,7 @@
 		FC7D69C024914E23007775F6 /* OTP */ = {
 			isa = PBXGroup;
 			children = (
+				FC1AB5EF24AD51B0008D8C98 /* VerificationViewController.swift */,
 				FC1CDA2C24A697FE005AF7D1 /* MobileNumberViewController.swift */,
 				FC7D69BE24914E17007775F6 /* OTPViewController.swift */,
 			);
@@ -334,6 +337,7 @@
 				038DCBED2483FB7B00353FA8 /* AppDelegate.swift in Sources */,
 				038DCBEF2483FB7B00353FA8 /* SceneDelegate.swift in Sources */,
 				03612AE5249AB22300AE6F41 /* ProfileViewController.swift in Sources */,
+				FC1AB5F424AE5398008D8C98 /* WalkthroughViewController.swift in Sources */,
 				FC1AB5EC24AD1A0A008D8C98 /* chatLogController.swift in Sources */,
 				FC1CDA2F24A93395005AF7D1 /* MainScreenViewController.swift in Sources */,
 				FC7D69C2249154AB007775F6 /* Custom Button.swift in Sources */,

@@ -19,10 +19,6 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let refereceVariable = Firebase.Database.database().reference(fromURL: "https://boat-user.firebaseio.com/")
-//        refereceVariable.updateChildValues(["someValues": 12345])
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func didTapContinue(_ sender: Any) {
@@ -31,14 +27,13 @@ class SignUpViewController: UIViewController {
         guard let phone = phoneTextField.text else {return}
         guard let pass = passwordTextField.text else {return}
         
+        //Doing:- Creating a new user in our firebase database.
         
         Auth.auth().createUser(withEmail: email, password: pass) { (result, error) in
             if let err = error{
                 print("Error while creating user \(err.localizedDescription)")
                 return
             }
-            
-            
             guard let uid = result?.user.uid else {return}
 
             let refereceVariable = Firebase.Database.database().reference(fromURL: "https://boat-user.firebaseio.com/")
@@ -49,7 +44,6 @@ class SignUpViewController: UIViewController {
                     print("Error:\(error.localizedDescription)")
                     return
                 }
-                
             }
             print("Sucessfully create new user to our database.")
             UserDefaults.standard.set(email, forKey: "user_email")
@@ -58,23 +52,13 @@ class SignUpViewController: UIViewController {
             UserDefaults.standard.set(pass, forKey: "user_pass")
         }
         
-        PhoneAuthProvider.provider().verifyPhoneNumber(phone, uiDelegate: nil) { (verificationID, error) in
-            if let error = error {
-                print("Errro: \(error.localizedDescription)")
-                return
-            }
-
-            UserDefaults.standard.set(verificationID, forKey: "verificationID")
+            //MARK:- Moving to Verification Screen.
+        
             let story = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-            let vc = story.instantiateViewController(withIdentifier: "verification") 
+            let vc = story.instantiateViewController(withIdentifier: "verification")
             self.present(vc, animated: true) {
                 print("verification Screen is showing")
-            }
         }
-        
-        
-        
-    }
-    
 
+    }
 }

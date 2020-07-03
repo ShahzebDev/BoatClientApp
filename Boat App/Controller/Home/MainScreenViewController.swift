@@ -390,3 +390,31 @@ extension MainScreenViewController: MKMapViewDelegate{
         return render
     }
 }
+class Core {
+    static let shared = Core()
+    
+    func isNewUser() -> Bool{
+        return !UserDefaults.standard.bool(forKey: "isNewUser")
+    }
+    
+    func setIsNotNewUser(){
+        UserDefaults.standard.set(true, forKey: "isNewUser")
+    }
+}
+
+extension MainScreenViewController{
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if Core.shared.isNewUser(){
+            //we'll show walkthrough screens
+            
+            let vc = storyboard?.instantiateViewController(identifier: "welcome") as! WalkthroughViewController
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true) {
+                print("Walkthrough screens is showing.")
+            }
+        }else{
+            print("This is our old user")
+        }
+    }
+}

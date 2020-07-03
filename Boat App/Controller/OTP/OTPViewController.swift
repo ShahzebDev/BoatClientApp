@@ -133,11 +133,12 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
     guard let tex4 = textField4.text else {return}
     guard let tex5 = textField5.text else {return}
     guard let tex6 = textField6.text else {return}
-    var code = tex1 + tex2 + tex3 + tex4 + tex5 + tex6
+    let code = tex1 + tex2 + tex3 + tex4 + tex5 + tex6
     guard let verificationID = UserDefaults.standard.string(forKey: "verificationID") else {return}
-    
+
+    //MARK:- Verifiying OTP Code.
     let credentials = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: code)
-    
+
     Auth.auth().signIn(with: credentials) { (result, error) in
         if let err = error{
             print("Error: \(err.localizedDescription)")
@@ -145,20 +146,27 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
             return
         }
         self.customAlert(status: "You're Verified")
-        //UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = vc
+        
     }
 }
     
     func customAlert(status: String){
         let ac = UIAlertController(title: "Verification Status", message: status, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+        ac.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: { (_) in
+            print("cancel is pressed")
+            //MARK:- Moving to Walkthrough Screen.
+            
+            let vc = self.storyboard?.instantiateViewController(identifier: "welcome") as! WalkthroughViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true) {
+                
+            print("Walkthrough screens is showing.")
+            }
+        }))
         self.present(ac, animated: true) {
             print("OTP Status Alert is showing")
         }
-        
-        let story = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-        let vc = story.instantiateViewController(identifier: "home") as! MainScreenViewController
-       UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = vc
+    
     }
     
    
@@ -177,3 +185,4 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
     */
 
 }
+
