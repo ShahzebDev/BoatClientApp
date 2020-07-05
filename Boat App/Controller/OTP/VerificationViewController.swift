@@ -11,11 +11,13 @@ import UIKit
 class VerificationViewController: UIViewController {
     
     @IBOutlet var imageNameField: UITextField!
-     var window: UIWindow!
+     
+    @IBOutlet var continueBtn: RoundButton!
+    var window: UIWindow!
     override func viewDidLoad() {
         super.viewDidLoad()
         imageNameField.backgroundColor = UIColor.clear
-
+        continueBtn.isEnabled = false
         border(textField: imageNameField)
     }
     
@@ -58,10 +60,14 @@ extension VerificationViewController: UIImagePickerControllerDelegate,UINavigati
         
         if let _ = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             self.imageNameField.text = "image.jpg"
+            continueBtn.isEnabled = true
+            continueBtn.backgroundColor = UIColor.systemGreen
             //here we perform our backend that will send this photo our database
             
         }else if let _ = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             self.imageNameField.text = "image.jpg"
+            continueBtn.isEnabled = true
+             continueBtn.backgroundColor = UIColor.systemGreen
             //here we perform our backend that will send this photo our database
         }
         dismiss(animated: true) {

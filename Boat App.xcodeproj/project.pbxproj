@@ -18,6 +18,7 @@
 		038DCC082484027600353FA8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038DCC072484027600353FA8 /* LoginViewController.swift */; };
 		038DCC0B2484028E00353FA8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038DCC0A2484028E00353FA8 /* SignUpViewController.swift */; };
 		9D84A9E581913B92B198AC21 /* libPods-Boat App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC702720BB0DDC9C118BF54 /* libPods-Boat App.a */; };
+		FC0C7FFD24B1248B00C62F7C /* UserAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0C7FFC24B1248B00C62F7C /* UserAlerts.swift */; };
 		FC1AB5EC24AD1A0A008D8C98 /* chatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1AB5EB24AD1A0A008D8C98 /* chatLogController.swift */; };
 		FC1AB5EE24AD1EB2008D8C98 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1AB5ED24AD1EB2008D8C98 /* SettingViewController.swift */; };
 		FC1AB5F024AD51B0008D8C98 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1AB5EF24AD51B0008D8C98 /* VerificationViewController.swift */; };
@@ -44,6 +45,7 @@
 		038DCC0A2484028E00353FA8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3E0B9AD27C9E53061F3F2FC3 /* Pods-Boat App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boat App.release.xcconfig"; path = "Target Support Files/Pods-Boat App/Pods-Boat App.release.xcconfig"; sourceTree = "<group>"; };
 		9BC702720BB0DDC9C118BF54 /* libPods-Boat App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Boat App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC0C7FFC24B1248B00C62F7C /* UserAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlerts.swift; sourceTree = "<group>"; };
 		FC1AB5EB24AD1A0A008D8C98 /* chatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatLogController.swift; sourceTree = "<group>"; };
 		FC1AB5ED24AD1EB2008D8C98 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FC1AB5EF24AD51B0008D8C98 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				FC7D69C1249154AB007775F6 /* Custom Button.swift */,
+				FC0C7FFC24B1248B00C62F7C /* UserAlerts.swift */,
 			);
 			path = "Extensions + Helpers";
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				038DCC082484027600353FA8 /* LoginViewController.swift in Sources */,
 				FC1AB5EE24AD1EB2008D8C98 /* SettingViewController.swift in Sources */,
 				038DCBF12483FB7B00353FA8 /* OnBoardingViewControlleer.swift in Sources */,
+				FC0C7FFD24B1248B00C62F7C /* UserAlerts.swift in Sources */,
 				03612AE3249AAF4700AE6F41 /* HomeViewController.swift in Sources */,
 				038DCBED2483FB7B00353FA8 /* AppDelegate.swift in Sources */,
 				038DCBEF2483FB7B00353FA8 /* SceneDelegate.swift in Sources */,

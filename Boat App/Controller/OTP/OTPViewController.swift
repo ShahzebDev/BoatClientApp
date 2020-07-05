@@ -17,6 +17,9 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var textField3: UITextField!
     @IBOutlet var textField2: UITextField!
     @IBOutlet var verifyButton: RoundButton!
+    
+    
+    var phoneNumber:String!
     var window: UIWindow!
     
     var otpValue = [String]()
@@ -140,15 +143,49 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
     let credentials = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: code)
 
     Auth.auth().signIn(with: credentials) { (result, error) in
-        if let err = error{
-            print("Error: \(err.localizedDescription)")
-            self.customAlert(status: "You're Not Verified Please type correct OTP Code")
+        if error != nil
+        {
+            print("Error: \(error!.localizedDescription)")
+            let ac = UIAlertController(title: "Server Response", message: error!.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            self.present(ac, animated: true, completion: nil)
+            self.clearAllTextFields()
             return
         }
-        self.customAlert(status: "You're Verified")
+        else
+        {
+          self.customAlert(status: "You're Verified")
+        }
+    }
+}
+    @IBAction func resendCodeBtn(){
+        guard let phonenumber = phoneNumber else {return}
+       PhoneAuthProvider.provider().verifyPhoneNumber(phonenumber, uiDelegate: nil) { (verificationID, error) in
+       if let error = error {
+        let ac = UIAlertController(title: "Server Response", message: error.localizedDescription, preferredStyle: .alert)
+         ac.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+         self.present(ac, animated: true, completion: nil)
+         print("Errro: \(error.localizedDescription)")
+           return
+       }
+        
+        UserDefaults.standard.set(verificationID, forKey: "verificationID")
+        let ac = UIAlertController(title: "Server Response", message: "We have sended OTP Code at \(phonenumber)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+        self.present(ac, animated: true, completion: nil)
         
     }
 }
+    
+    
+    func clearAllTextFields(){
+         textField1.text = ""
+         textField2.text = ""
+         textField3.text = ""
+         textField4.text = ""
+         textField5.text = ""
+         textField6.text = ""
+    }
     
     func customAlert(status: String){
         let ac = UIAlertController(title: "Verification Status", message: status, preferredStyle: .alert)
@@ -169,20 +206,5 @@ class OTPViewController: UIViewController,UITextFieldDelegate {
     
     }
     
-   
-    
-   
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 

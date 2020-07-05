@@ -40,8 +40,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     //MARK:- Function to Check keepUserLoggedIn
     
+    
     func checkingAppUser(){
-        if UserDefaults.standard.string(forKey: "user_name") != nil{
+        if UserDefaults.standard.bool(forKey: "isNewUser") == true {
+//        if UserDefaults.standard.string(forKey: "user_name") != nil{
             print("We have a user")
             let vc =  UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "home")
             window?.rootViewController = vc

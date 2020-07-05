@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 class SignUpViewController: UIViewController {
 
     @IBOutlet var nameTextField: UITextField!
@@ -15,6 +16,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet var phoneTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    let location = CLLocationManager()
     
     
     override func viewDidLoad() {
@@ -27,15 +29,24 @@ class SignUpViewController: UIViewController {
         guard let phone = phoneTextField.text else {return}
         guard let pass = passwordTextField.text else {return}
         
+        if (nameTextField.text == "") || (emailTextField.text == "") || (phoneTextField.text == "") || (passwordTextField.text == "")
+        {
+            self.showingAlert(Alert: "Fields Required", message: "Please fill out all the fields", action: "Okay")
+        }
+        else
+        {
+            print("User has fill all the fields")
         //Doing:- Creating a new user in our firebase database.
         
         Auth.auth().createUser(withEmail: email, password: pass) { (result, error) in
-            if let err = error{
-                print("Error while creating user \(err.localizedDescription)")
-                return
+            if error != nil
+            {
+                self.showingAlert(Alert: "Server Response", message: error!.localizedDescription, action: "Okay")
             }
+            else
+            {
+                
             guard let uid = result?.user.uid else {return}
-
             let refereceVariable = Firebase.Database.database().reference(fromURL: "https://boat-user.firebaseio.com/")
             let userReference = refereceVariable.child("users").child(uid)
             let values = ["name": name,"email": email,"phone": phone,"pass": pass]
@@ -46,6 +57,9 @@ class SignUpViewController: UIViewController {
                 }
             }
             print("Sucessfully create new user to our database.")
+            guard let coordinates = self.location.location?.coordinate else {return}
+            print(coordinates)
+            UserDefaults.standard.set(uid, forKey: "uid")
             UserDefaults.standard.set(email, forKey: "user_email")
             UserDefaults.standard.set(name, forKey: "user_name")
             UserDefaults.standard.set(phone, forKey: "user_phone")
@@ -61,4 +75,16 @@ class SignUpViewController: UIViewController {
         }
 
     }
+    
+ }
 }
+}
+extension SignUpViewController{
+    func showingAlert(Alert title: String,message: String,action: String){
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: action, style: .cancel, handler: nil))
+        present(ac, animated: true, completion: nil)
+        return
+    }
+}
+

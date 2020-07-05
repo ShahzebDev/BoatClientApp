@@ -96,10 +96,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="stF-F3-SR0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="IjD-dn-GUj">
@@ -109,7 +110,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhatsApp Image 2019-12-20 at 15.49.11" translatesAutoresizingMaskIntoConstraints="NO" id="akX-6t-79P">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome3" translatesAutoresizingMaskIntoConstraints="NO" id="akX-6t-79P">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="kLX-UC-f2N"/>
@@ -184,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Aw-4n-Irz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837.68115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1747.826086956522" y="137.94642857142856"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="jJE-kq-qN0">
@@ -194,7 +195,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhatsApp Image 2019-12-20 at 15.49.11" translatesAutoresizingMaskIntoConstraints="NO" id="OZq-fJ-dqE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome2" translatesAutoresizingMaskIntoConstraints="NO" id="OZq-fJ-dqE">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="256" id="Hbx-5v-39c"/>
@@ -273,7 +274,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4f-T2-wZY">
                                 <rect key="frame" x="86" y="374" width="45" height="21"/>
@@ -349,24 +350,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBq-ya-JRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1592.753623188406" y="137.94642857142856"/>
+            <point key="canvasLocation" x="2502.898550724638" y="137.94642857142856"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7NT-K7-Eho">
             <objects>
                 <viewController storyboardIdentifier="OTPScreen" id="j7r-7v-ueE" customClass="OTPViewController" customModule="Boat_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0fv-Bf-dGc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Verification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRw-bz-j11">
-                                <rect key="frame" x="20" y="108" width="263" height="39"/>
+                                <rect key="frame" x="20" y="64" width="263" height="39"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've successfully created your account." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nsx-W5-Jew">
-                                <rect key="frame" x="61" y="176" width="321" height="38"/>
+                                <rect key="frame" x="61" y="132" width="321" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="SST-qX-E03"/>
                                     <constraint firstAttribute="width" constant="321" id="hyp-e8-Fds"/>
@@ -376,7 +377,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We have sent a six digit code to verify your mobile number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaI-mG-olV">
-                                <rect key="frame" x="20" y="222" width="380" height="43"/>
+                                <rect key="frame" x="20" y="178" width="380" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="PwG-EB-SE4"/>
                                     <constraint firstAttribute="width" constant="380" id="iG3-ul-tYS"/>
@@ -413,6 +414,9 @@
                                 <state key="normal" title="Resend Code">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="resendCodeBtn" destination="j7r-7v-ueE" eventType="touchUpInside" id="aSV-XH-jIk"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apc-mv-DZC">
                                 <rect key="frame" x="20" y="352" width="374" height="60"/>
@@ -513,6 +517,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hSE-qV-IZE"/>
                     </view>
+                    <navigationItem key="navigationItem" id="B4s-DS-kCL"/>
                     <connections>
                         <outlet property="textField1" destination="YXc-6q-uZD" id="I9i-Ha-5HY"/>
                         <outlet property="textField2" destination="R8x-qB-gfK" id="P9O-uV-nRE"/>
@@ -525,7 +530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgo-qh-cfb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3167" y="138"/>
+            <point key="canvasLocation" x="4076.811594202899" y="137.94642857142856"/>
         </scene>
         <!--Mobile Number View Controller-->
         <scene sceneID="TLF-42-M5F">
@@ -582,6 +587,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="verifyMyNumber:" destination="0L8-Gy-Cth" eventType="touchUpInside" id="mg5-vK-Kwc"/>
+                                    <segue destination="j7r-7v-ueE" kind="show" id="HEU-f0-sMh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -599,13 +605,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ido-hH-WAQ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nbR-bg-jdo"/>
                     <connections>
                         <outlet property="mobileNumber" destination="bvN-hp-dZy" id="Ioh-We-4t3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dat-Gj-N18" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4048" y="138"/>
+            <point key="canvasLocation" x="4957.971014492754" y="137.94642857142856"/>
         </scene>
         <!--Walkthrough View Controller-->
         <scene sceneID="4aq-fV-UYR">
@@ -635,7 +642,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlc-1Q-HEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5190" y="147"/>
+            <point key="canvasLocation" x="6100.0000000000009" y="146.65178571428569"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="E9n-S1-naZ">
@@ -645,8 +652,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="318" height="125"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHe-LH-QxB">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHe-LH-QxB">
                                 <rect key="frame" x="0.0" y="0.0" width="318" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="318" id="qmD-1A-2UO"/>
                                     <constraint firstAttribute="height" constant="34" id="tm1-ul-03n"/>
@@ -656,17 +664,21 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WF1-HX-TEv">
                                 <rect key="frame" x="0.0" y="72" width="318" height="45"/>
+                                <color key="backgroundColor" red="0.1586623788" green="0.3908680081" blue="0.56473034619999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="GlF-9l-LQr"/>
                                     <constraint firstAttribute="width" constant="318" id="Nu8-lA-8gL"/>
                                 </constraints>
-                                <state key="normal" title="Login"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapLoginButton:" destination="mZj-fD-YAV" eventType="touchUpInside" id="6q1-DA-2vm"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AU9-2X-yDM">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AU9-2X-yDM">
                                 <rect key="frame" x="0.0" y="31" width="318" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="QpT-CX-Xrg"/>
                                     <constraint firstAttribute="width" constant="318" id="mfR-Ri-RNd"/>
@@ -1539,12 +1551,13 @@
                         <viewLayoutGuide key="safeArea" id="X46-T9-9gq"/>
                     </view>
                     <connections>
+                        <outlet property="continueBtn" destination="kHr-yH-5hF" id="bZt-wU-vTB"/>
                         <outlet property="imageNameField" destination="h2G-Sx-0hL" id="7OW-XR-0U8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4H8-6E-MNT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2367" y="138"/>
+            <point key="canvasLocation" x="3276.811594202899" y="137.94642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gvr-W6-keF">
@@ -1566,7 +1579,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="WhatsApp Image 2019-12-20 at 15.49.11" width="379" height="261"/>
         <image name="angryimg-3" width="200" height="200"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="book" catalog="system" width="128" height="101"/>
@@ -1583,5 +1595,7 @@
         <image name="sailing-vessel-ship-battleship-mega-yacht-54270" width="606" height="807"/>
         <image name="setting" width="32" height="32"/>
         <image name="twitter-3" width="128" height="128"/>
+        <image name="welcome2" width="535" height="802"/>
+        <image name="welcome3" width="379" height="261"/>
     </resources>
 </document>

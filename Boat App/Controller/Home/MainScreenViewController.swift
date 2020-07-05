@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 class MainScreenViewController: UIViewController {
     
     
@@ -203,6 +204,8 @@ class MainScreenViewController: UIViewController {
     
     @IBAction func requestNowBtnPressed(){
         print("Request Now!!!")
+//        guard let coordinates = locationManager.location?.coordinate else {return}
+//        print("this is our current coordinates \(coordinates)")
         requestNow.isHidden = true
         getDirection()
         
@@ -320,6 +323,19 @@ class MainScreenViewController: UIViewController {
         showingCenterViewOfUserLocation()
         locationManager.startUpdatingLocation()
         previousLocation = getCenterLocation(for: mapView)
+        guard let uid = UserDefaults.standard.string(forKey: "uid") else {return}
+        guard let latitude = locationManager.location?.coordinate.latitude else {return}
+        guard let lontitude = locationManager.location?.coordinate.longitude else {return}
+         let refereceVariable = Firebase.Database.database().reference(fromURL: "https://boat-user.firebaseio.com/")
+         let userReference = refereceVariable.child("users").child(uid)
+        let values = ["latitude":latitude,"longtitude":lontitude]
+        userReference.updateChildValues(values) { (error, dbref) in
+            if let err = error {
+                print("Error: \(err.localizedDescription)")
+                return
+            }
+        }
+        
     }
     
     func getCenterLocation(for mapView: MKMapView) -> CLLocation{
