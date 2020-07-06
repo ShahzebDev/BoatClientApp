@@ -88,7 +88,9 @@ class WalkthroughViewController: UIViewController {
             //MARK:- Moving to Main screen.
             let story = UIStoryboard.init(name: "Main", bundle: Bundle.main)
             let vc = story.instantiateViewController(identifier: "home") as! MainScreenViewController
-            UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = vc
+//            UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = vc
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
             return
         }
         
