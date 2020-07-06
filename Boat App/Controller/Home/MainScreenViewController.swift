@@ -17,6 +17,7 @@ class MainScreenViewController: UIViewController {
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var locationLabelView: UIView!
     
+    @IBOutlet var sideBarViewContainer: UIView!
     @IBOutlet var requestNow: UIButton!
     
     let locationManager = CLLocationManager()
@@ -29,11 +30,26 @@ class MainScreenViewController: UIViewController {
          checkLoctionServices()
          settingUpLocationLabelView()
     
+        setupSideBar()
     }
     
-
+    func setupSideBar() {
+        sideBarViewContainer.bounds.origin.x = sideBarViewContainer.bounds.width
+        sideBarViewContainer.isHidden = true
+        sideBarViewContainer.isUserInteractionEnabled = true
+        
+        let swipeGesture = UITapGestureRecognizer(target: self, action: #selector(hideBar(_:)))
+        sideBarViewContainer.addGestureRecognizer(swipeGesture)
+    }
     
-    
+    @objc
+    func hideBar(_ sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.5) {
+            self.sideBarViewContainer.bounds.origin.x = self.sideBarViewContainer.bounds.width
+        }
+        
+        self.sideBarViewContainer.isHidden = true
+    }
     
     //Initialling we cannot show this UIView on our user map screen
     //we will show this view when we want to show boat driver details.
@@ -201,6 +217,13 @@ class MainScreenViewController: UIViewController {
            }
        }
     
+    
+    @IBAction func displaySideBar(_ sender: Any) {
+        UIView.animate(withDuration: 0.5) {
+            self.sideBarViewContainer.isHidden = false
+            self.sideBarViewContainer.bounds.origin.x = 0
+        }
+    }
     
     @IBAction func requestNowBtnPressed(){
         print("Request Now!!!")
