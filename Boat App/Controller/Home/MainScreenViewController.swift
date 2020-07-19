@@ -70,7 +70,7 @@ class MainScreenViewController: UIViewController {
         
         let incomingIcone = UIImageView()
         // We will extract image of our driver and show it here
-        incomingIcone.image = #imageLiteral(resourceName: "man-2")
+        incomingIcone.image = #imageLiteral(resourceName: "sunny")
         incomingIcone.layer.cornerRadius = 40
         incomingIcone.layer.borderWidth = 1
         incomingIcone.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
@@ -89,7 +89,7 @@ class MainScreenViewController: UIViewController {
         
         let incominglable = UILabel()
         // We will extract name of our driver and show it here
-        incominglable.text = " Driver Name"
+        incominglable.text = "Shahzeb Yousaf"
         incominglable.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         incominglable.font = UIFont.boldSystemFont(ofSize: 20)
         bottomView.addSubview(incominglable)
@@ -107,7 +107,7 @@ class MainScreenViewController: UIViewController {
         
         let incomingAdress = UILabel()
         // We will extract location of our driver and show it here
-         incomingAdress.text = "Driver Location"
+         incomingAdress.text = "One infinite loop"
          incomingAdress.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
          incomingAdress.font = UIFont.boldSystemFont(ofSize: 15)
          bottomView.addSubview(incomingAdress)
